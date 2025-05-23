@@ -1,10 +1,10 @@
 {% extends 'shop/base.html' %}
 {% load static %}
-{% block title %} Рекомендации {% endblock %}
+{% block title %} Recommendations for You {% endblock %}
 {% block content %}
 
 <div class="shadow p-3 mb-5 bg-light rounded">
-    <h4 align="center" style="color: #098977">Рекомендации для вас</h4>
+    <h4 align="center" style="color: #098977">Recommendations for You</h4>
 </div>
 
 <div style="margin-top: 2%;margin-left: 6%">
@@ -22,13 +22,13 @@
                   <hr>
                   <h5 class="text-left">{{ product.name }}</h5>
                   <h6 class="text-left" style="color: red">{{ product.category }}</h6>
-                  <p class="card-text">{{ product.price }} Руб.</p>
+                  <p class="card-text">{{ product.price }} MAD</p>
                   {% if product.stock > 0 %}
-                    <p class="card-text" style="color: green">В наличии</p>
+                    <p class="card-text" style="color: green">В Available</p>
                   {% else %}
-                    <p class="card-text" style="color: red">Закончились</p>
+                    <p class="card-text" style="color: red">Sold out</p>
                   {% endif %}
-                  <p><a href="{{ product.get_absolute_url }}" class="btn btn-dark btn-sm">Просмотр</a></p>
+                  <p><a href="{{ product.get_absolute_url }}" class="btn btn-dark btn-sm">View</a></p>
               </div>
           </div>
         {% endfor %}

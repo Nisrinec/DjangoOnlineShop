@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {% if category %}{{ category.name }} {% else %} Book Haven - Онлайн магазин | Домашняя{% endif %}
+    {% if category %}{{ category.name }} {% else %} Book Haven – Online Store | Home{% endif %}
 {% endblock %}
 
 
@@ -10,11 +10,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <h5 style="text-align:center;color: grey ">Категории</h5>
+      <h5 style="text-align:center;color: grey ">Categories</h5>
       <br>
       <ul class="my-dropdown-list">
   <li {% if not category %}class="selected"{% endif %}>
-    <a href="{% url 'shop:product_list' %}" class="my-dropdown-item" title="Все книги">Все книги</a>
+    <a href="{% url 'shop:product_list' %}" class="my-dropdown-item" title="All Books">All Books</a>
   </li>
   {% for c in categories %}
   <li {% if category.slug == slug %} class="active"{% endif %}>
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="col">
-      <a href="{% url 'shop:recommend' %}" class="btn"><strong><p class="shadow p-1 mb-3 bg-light rounded"style="text-align:center;color: black ">Получить рекомендации</p></strong></a>
+      <a href="{% url 'shop:recommend' %}" class="btn"><strong><p class="shadow p-1 mb-3 bg-light rounded"style="text-align:center;color: black ">Get Recommendations</p></strong></a>
       
     </div>
   </div>
@@ -59,7 +59,7 @@
   <hr>  
 </div>
 
-<h4 class="shadow p-3 mb-1 bg-white rounded" align="center" style="color: grey ">Все Книги</h4>
+<h4 class="shadow p-3 mb-1 bg-white rounded" align="center" style="color: grey ">All Books</h4>
 <div style="margin-top: 2%;margin-left: 6%">
   <div class="row">
     {% for product in products %}
@@ -69,13 +69,13 @@
           <img src="{% if product.image %} {{ product.image.url }} {% else %}{% static 'img/no_image.png' %} {% endif %}" alt="..." style="height: 300px; width: 200px"></a>
         <hr>
         <h5 class="text-left">{{ product.name }}</h5>
-        <p class="card-text">{{ product.price }} Руб.</p>
+        <p class="card-text">{{ product.price }} MAD</p>
         {% if product.stock > 0 %}
-          <p class="card-text" style="color: teal">В наличии</p>
+          <p class="card-text" style="color: teal">In Stock</p>
         {% else %}
-          <p class="card-text" style="color: gold">Закончилось</p>
+          <p class="card-text" style="color: gold">Sold Out</p>
         {% endif %}
-        <p><a href="{{ product.get_absolute_url }}" class="btn-view">Подробнее</a></p>
+        <p><a href="{{ product.get_absolute_url }}" class="btn-view">Learn more</a></p>
           
       </div>
     </div>

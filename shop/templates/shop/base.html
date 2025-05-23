@@ -114,7 +114,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav md-auto">
-                <h3 style="color: skyblue"><marquee behavior="scroll" direction="left" width="600">Мы открылись! Не забудьте оценить нашу систему рекомендаций.</marquee></h3>
+                <h3 style="color: skyblue"><marquee behavior="scroll" direction="left" width="600">We are open! Don’t forget to rate our recommendation system.</marquee></h3>
 
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -124,7 +124,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Выйти из аккаунта</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Log out</a>
                     </li>
           
                     
@@ -142,11 +142,11 @@
                 
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Авторизоваться</a>
+                        <a class="nav-link" href="{% url 'login' %}">Log in</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Зарегистрироваться</a>
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
                     </li>
 
                     <li class="nav-item">
@@ -176,11 +176,11 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'shop:product_list' %}"><i class="fas fa-home" style="color: white"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about:about_detail' %}" style="color: white" >О нас</a></li>
                 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="avbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Товары</a>
+    <a class="nav-link dropdown-toggle" href="#" id="avbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Products</a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <ol class="list-unstyled">
             <li {% if not category %} class="active"{% endif %}>
-                <a class="dropdown-item" style="color:#1499be" href="{% url 'shop:product_list' %}">Все продукты</a>
+                <a class="dropdown-item" style="color:#1499be" href="{% url 'shop:product_list' %}">All Products</a>
             </li>
             {% for c in categories %}
                 <li {% if category.slug == slug %} class="active"{% endif %}>
@@ -191,32 +191,32 @@
     </div>
 </li>
 
-                <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact_detail' %}" style="color: white" >Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact_detail' %}" style="color: white" >Contact Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://darkkingarthas.wordpress.com/" target="_blank" style="color: white" >Блог</a></li>
                 
                 {% if user.is_authenticated %}
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="avbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Мой аккаунт</a>
+        <a class="nav-link dropdown-toggle" href="#" id="avbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">My Account</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <ol class="list-unstyled">
-                <li><a class="nav-link" href="{% url 'profile' %}" style="color:#1499be">Профиль</a></li>
-                <li><a class="nav-link" href="{% url 'cart:cart_detail' %}" style="color:#1499be">Корзина:
+                <li><a class="nav-link" href="{% url 'profile' %}" style="color:#1499be">Profile</a></li>
+                <li><a class="nav-link" href="{% url 'cart:cart_detail' %}" style="color:#1499be">Shopping Cart:
                         {% with total_items=cart|length %}
                             {% if cart|length > 0 %}
-                                {{ total_items }} item{{ total_items|pluralize }}, {{ cart.get_total_price }} Руб.
+                                {{ total_items }} item{{ total_items|pluralize }}, {{ cart.get_total_price }} MAD
                             {% else %}
-                                0 товаров
+                                0 products
                             {% endif %}
                         {% endwith %}
                     </a>
                 </li>
-                <li><a href="{% url 'orders:order_create' %}" class="nav-link" style="color:#1499be"> Купить</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}" style="color:#1499be">Выйти</a></li>
+                <li><a href="{% url 'orders:order_create' %}" class="nav-link" style="color:#1499be"> Buy</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}" style="color:#1499be">Log out</a></li>
             </ol>
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link recommend-btn btn-13" href="{% url 'shop:recommend' %}" target="_self" style="color: white">Получить рекомендации</a>
+        <a class="nav-link recommend-btn btn-13" href="{% url 'shop:recommend' %}" target="_self" style="color: white">Get Recommendations</a>
     </li>
 {% endif %}
 
@@ -225,7 +225,7 @@
                     <ul class="navbar-nav ml-auto">
                       <form class="form-inline">
                         <input class="form-control mr-sm-2" type="search" placeholder="Поиск..." aria-label="Search" name='search' value="{{search_term}}" size="50px">
-                        <button class="btn-search my-sm-0" type="submit">Найти</button>
+                        <button class="btn-search my-sm-0" type="submit">Search</button>
                       </form>
                     </ul>
     </nav>
@@ -262,7 +262,7 @@
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="copyright_content">
-                    Куликов А. И., &copy; <script>document.write(new Date().getFullYear());</script> | Diploma Django Project
+                     А. И., &copy; <script>document.write(new Date().getFullYear());</script> | Diploma Django Project
             </div>
         </div>
     </div>
